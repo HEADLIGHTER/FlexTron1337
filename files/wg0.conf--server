@@ -1,0 +1,9 @@
+[Interface]
+Address = 10.13.37.37/24
+SaveConfig = true
+ListenPort = 13370
+PrivateKey = yOuRSerVER1337pRiVatEKey=
+
+[Peer]
+PublicKey = yOurClIEnT1337pUbLICkKey=
+AllowedIPs = 10.13.37.1/32

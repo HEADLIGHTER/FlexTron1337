@@ -1,0 +1,12 @@
+[Interface]
+PrivateKey = yOurClIeNt1337PrIVAteKEy=
+Address = 10.13.37.1/32
+ListenPort = 13370
+
+PostUp = ping -c1 10.13.37.37
+
+[Peer]
+PublicKey = yOuRsERVeR1337pUBliCKkEY=
+Endpoint = your.server.public.ip:13370
+AllowedIPs = 10.13.37.0/24, your.server.local.ip/24
+PersistentKeepalive = 25

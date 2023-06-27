@@ -29,6 +29,7 @@
 * [STEP 4 : Install and configure Gogs VCS](#4)
 * [STEP 5 : Install and configure WireGuard](#5)
 <a name="headers"/>
+
 ### STEP <a name=0>0</a> : BIOS / VM
  !Your BIOS should support EFI! Set AHCI in bios if you turn RAID instead, I'm using program RAID1 by Debian. Also set Enable Efi in system settings if you are running on VM.
 ### STEP <a name=1>1</a> : Setup Debian

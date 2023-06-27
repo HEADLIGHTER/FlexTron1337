@@ -13,9 +13,9 @@ cpul=$(top -bn1 | grep '^%Cpu' | cut -c 9- | xargs | awk '{printf("%.1f%%"), $1 
 lb=$(who -b | awk '$1 == "system" {print $3 " " $4 " " $5 }')
 praid=$(lsblk | grep "raid" | wc -l)
 praidu=$(if [ $praid -eq 0 ]; then echo no; else echo yes; fi)
+#You need to install net tools and hddtemp for the next step [$ sudo apt install net-tools hddtemp]
 hdd1t=$(hddtemp SATA:/dev/sda | awk '$1 == "/dev/sda:" {print $4 "C"}')
 hdd2t=$(hddtemp SATA:/dev/sdb | awk '$1 == "/dev/sdb:" {print $4 "C"}')
-#You need to install net tools for the next step [$ sudo apt install net-tools]
 ctcp=$(cat /proc/net/sockstat{,6} | awk '$1 == "TCP:" {print $3}')
 ulog=$(users | wc -w)
 ip=$(hostname -I)
@@ -26,7 +26,7 @@ wall "#Architecture: $arc
         #vCPU: $vcpu
         #CPU temperature: $tcpu
         #Memory Usage: $uram/${fram}MB ($pram%)
-        #Disk Usage: $udisk/${fdisk}Gb ($pdisk%)
+        #Disk Usage: $udisk/${fdisk}GB ($pdisk%)
         #CPU load: $cpul
         #Last boot: $lb
         #Programm RAID use: $praidu
